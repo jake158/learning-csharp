@@ -1,4 +1,4 @@
-﻿
+﻿using System;
 
 // Class that defines Main() => Application Object
 class Program
@@ -10,6 +10,18 @@ class Program
         {
             Console.WriteLine("Arg: {0}", args[i]);
         }
+        ShowEnvironmentDetails();
+    }
+
+    static void ShowEnvironmentDetails()
+    {
+        foreach (string drive in Environment.GetLogicalDrives())
+        {
+            Console.WriteLine("Drive: {0}", drive);
+        }
+        Console.WriteLine("OS: {0}", Environment.OSVersion);
+        Console.WriteLine("Number of Processors: {0}", Environment.ProcessorCount);
+        Console.WriteLine(".NET Core Version: {0}", Environment.Version);
     }
 }
 
